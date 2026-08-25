@@ -336,61 +336,6 @@
         color: var(--accent);
       }
 
-      /* ── Cards ──────────────────────────────────────────────────────── */
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-      }
-      .card {
-        background: var(--paper-2);
-        border: 1px solid var(--line);
-        padding: 27px;
-        min-height: 250px;
-        position: relative;
-        overflow: hidden;
-        cursor: pointer;
-        transition:
-          transform 320ms var(--ease-out),
-          background-color 320ms ease,
-          border-color 320ms ease,
-          box-shadow 320ms var(--ease-out);
-      }
-      .card::before {
-        content: "";
-        position: absolute;
-        inset: auto 0 0 0;
-        height: 2px;
-        background: var(--accent);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 420ms var(--ease-out);
-      }
-      .card.selected {
-        background: #fffdf7;
-        border-color: #c5bcad;
-      }
-      .card.selected::before {
-        transform: scaleX(1);
-      }
-      .card:active {
-        transform: scale(0.985);
-      }
-      .card small {
-        color: var(--accent);
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        font-size: 11px;
-      }
-      .card h3 {
-        font: 500 28px/1.05 var(--serif);
-        margin: 38px 0 12px;
-      }
-      .card p {
-        color: var(--muted);
-        margin: 0;
-      }
-
       /* ── Facts ──────────────────────────────────────────────────────── */
 
       /* ── Lone stat ──────────────────────────────────────────────────── */
@@ -998,15 +943,6 @@
           border-color: var(--accent-deep);
           color: var(--paper);
         }
-        .card:hover {
-          transform: translateY(-7px);
-          background: #fffdf7;
-          border-color: #c5bcad;
-          box-shadow: 0 18px 40px -28px rgba(23, 32, 29, 0.45);
-        }
-        .card:hover::before {
-          transform: scaleX(1);
-        }
         .pub:hover {
           border-color: var(--accent);
           background: #fffdf7;
@@ -1071,9 +1007,6 @@
         }
         .section-no {
           position: static;
-        }
-        .grid {
-          grid-template-columns: 1fr 1fr;
         }
         .route {
           padding-left: 40px;
@@ -1173,7 +1106,6 @@
         .hero-media video {
           transform: scale(1.04);
         }
-        .card:hover,
         .btn:hover,
         .visit:hover {
           transform: none;
@@ -1192,8 +1124,8 @@
     <header class="nav" id="nav">
       <div class="wrap">
         <nav class="navlinks">
-          <a href="#about">About</a><a href="#work">Focus</a
-          ><a href="#skills">Skills</a><a href="#path">Path</a
+          <a href="#about">About</a><a href="#skills">Skills</a
+          ><a href="#path">Path</a
           ><a href="#cities">Cities</a><a href="#life">Off the clock</a
           ><a href="#contact">Connect</a>
         </nav>
@@ -1266,50 +1198,11 @@
         </div>
       </section>
 
-      <!-- ══ 02 FOCUS ══════════════════════════════════════════════════ -->
-      <section id="work">
-        <div class="wrap">
-          <div class="section-head">
-            <div class="section-no reveal">02 — Focus</div>
-            <h2 class="reveal">Three ways I move a question forward.</h2>
-          </div>
-          <div class="grid">
-            <article class="card reveal">
-              <small>01 / Signal</small>
-              <h3>Host–pathogen biology</h3>
-              <p>
-                Avian influenza, RIG-I and RIPLET signalling, interferon-
-                stimulated gene responses — dual-luciferase assays, RT-qPCR,
-                co-immunoprecipitation and confocal microscopy at BSL-2.
-              </p>
-            </article>
-            <article class="card reveal">
-              <small>02 / Build</small>
-              <h3>Research systems</h3>
-              <p>
-                Automated R and Python pipelines for processing, QC, analysis
-                and visualisation — the kind that took experimental reporting
-                from days down to hours.
-              </p>
-            </article>
-            <article class="card reveal">
-              <small>03 / Translate</small>
-              <h3>Teaching &amp; clarity</h3>
-              <p>
-                Taught BIOL 107, BIOL 298 and IMIN 372, ran an intro cell
-                biology lab at Concordia, and trained 5+ students in Western
-                blotting, ELISA and data analysis.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ══ 03 SKILLS ═════════════════════════════════════════════════ -->
+      <!-- ══ 02 SKILLS ═════════════════════════════════════════════════ -->
       <section id="skills">
         <div class="wrap">
           <div class="section-head">
-            <div class="section-no reveal">03 — Skills</div>
+            <div class="section-no reveal">02 — Skills</div>
             <h2 class="reveal">From the bench, to the pipeline, to the agent.</h2>
           </div>
 
@@ -1424,11 +1317,11 @@
         </div>
       </section>
 
-      <!-- ══ 04 PATH ═══════════════════════════════════════════════════ -->
+      <!-- ══ 03 PATH ═══════════════════════════════════════════════════ -->
       <section id="path">
         <div class="wrap">
           <div class="section-head">
-            <div class="section-no reveal">04 — Path</div>
+            <div class="section-no reveal">03 — Path</div>
             <h2 class="reveal">
               Experience is a sequence of useful questions.
             </h2>
@@ -1533,14 +1426,14 @@
         </div>
       </section>
 
-      <!-- ══ 05 CITIES ═════════════════════════════════════════════════
+      <!-- ══ 04 CITIES ═════════════════════════════════════════════════
            A vertical dotted route. The line draws downward as you scroll,
            nodes light as they pass, and every photo drifts inside its own
            frame at its own speed. ════════════════════════════════════════ -->
       <section id="cities">
         <div class="wrap">
           <div class="section-head">
-            <div class="section-no reveal">05 — Cities</div>
+            <div class="section-no reveal">04 — Cities</div>
             <h2 class="reveal">From Nukus, the long way round.</h2>
           </div>
           <p class="intro reveal">
@@ -1768,11 +1661,11 @@
         </div>
       </section>
 
-      <!-- ══ 06 OFF THE CLOCK ══════════════════════════════════════════ -->
+      <!-- ══ 05 OFF THE CLOCK ══════════════════════════════════════════ -->
       <section id="life">
         <div class="wrap">
           <div class="section-head">
-            <div class="section-no reveal">06 — Off the clock</div>
+            <div class="section-no reveal">05 — Off the clock</div>
             <h2 class="reveal">The rest of me.</h2>
           </div>
 
@@ -1854,7 +1747,7 @@
         </div>
       </section>
 
-      <!-- ══ 07 CONNECT ════════════════════════════════════════════════ -->
+      <!-- ══ 06 CONNECT ════════════════════════════════════════════════ -->
       <section id="contact">
         <div class="wrap contact">
           <h2 class="reveal">Let's connect.</h2>
@@ -1954,13 +1847,6 @@
             ).observe(vid);
           }
         }
-
-        /* ── Cards: click to pin ──────────────────────────────────── */
-        document.querySelectorAll(".card").forEach(function (c) {
-          c.addEventListener("click", function () {
-            c.classList.toggle("selected");
-          });
-        });
 
         /* ── Quote: words light as the line crosses the screen ─────── */
         var quote = document.getElementById("quote");
