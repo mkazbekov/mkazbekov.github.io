@@ -440,6 +440,172 @@
         border-bottom-color: rgba(47, 111, 94, 0.28);
       }
 
+      /* ── Recent work ────────────────────────────────────────────────── */
+      .recent-intro {
+        max-width: 660px;
+        margin: -18px 0 48px 33.333%;
+        color: var(--muted);
+        font-size: 17px;
+      }
+      .recent-feature {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+        min-height: 560px;
+        border: 1px solid var(--line);
+        background: #fffdf7;
+        overflow: hidden;
+        transition:
+          border-color 300ms ease,
+          box-shadow 300ms ease;
+      }
+      .recent-copy {
+        display: flex;
+        flex-direction: column;
+        padding: clamp(34px, 5vw, 64px);
+      }
+      .recent-meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px 18px;
+        color: var(--muted);
+        font-size: 11px;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+      }
+      .recent-award {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid rgba(47, 111, 94, 0.34);
+        border-radius: 99px;
+        padding: 6px 11px;
+        color: var(--accent-deep);
+        background: var(--accent-soft);
+      }
+      .recent-award::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 4px rgba(47, 111, 94, 0.1);
+      }
+      .recent-copy h3 {
+        font: 500 clamp(42px, 6.5vw, 78px)/0.94 var(--serif);
+        letter-spacing: -0.055em;
+        margin: 34px 0 24px;
+      }
+      .recent-summary {
+        max-width: 600px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.7;
+      }
+      .recent-summary strong {
+        color: var(--ink);
+        font-weight: 500;
+      }
+      .recent-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 30px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+      .recent-tags li {
+        border: 1px solid var(--line);
+        border-radius: 99px;
+        padding: 7px 11px;
+        color: var(--muted);
+        font-size: 11px;
+      }
+      .recent-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-top: auto;
+        padding-top: 42px;
+      }
+      .recent-visual {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100%;
+        padding: clamp(34px, 4.5vw, 58px);
+        color: var(--paper);
+        background:
+          radial-gradient(circle at 82% 18%, rgba(47, 111, 94, 0.72), transparent 30%),
+          linear-gradient(150deg, #17201d 0%, #263a33 100%);
+        isolation: isolate;
+      }
+      .recent-visual::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        opacity: 0.16;
+        background-image:
+          linear-gradient(rgba(244, 241, 233, 0.18) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(244, 241, 233, 0.18) 1px,
+            transparent 1px
+          );
+        background-size: 42px 42px;
+        mask-image: linear-gradient(to bottom, #000, transparent 88%);
+      }
+      .recent-visual-label {
+        color: rgba(244, 241, 233, 0.62);
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+      .recent-request {
+        margin: 38px 0 30px;
+        font: italic 500 clamp(24px, 3.3vw, 38px)/1.18 var(--serif);
+        letter-spacing: -0.025em;
+      }
+      .recent-flow {
+        display: grid;
+        gap: 10px;
+      }
+      .recent-node {
+        position: relative;
+        border: 1px solid rgba(244, 241, 233, 0.24);
+        background: rgba(244, 241, 233, 0.06);
+        padding: 14px 16px;
+        font-size: 12px;
+        letter-spacing: 0.03em;
+        backdrop-filter: blur(5px);
+      }
+      .recent-node + .recent-node::before {
+        content: "";
+        position: absolute;
+        top: -11px;
+        left: 24px;
+        width: 1px;
+        height: 10px;
+        background: rgba(244, 241, 233, 0.42);
+      }
+      .recent-node span {
+        float: right;
+        color: #9fd3c3;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .recent-output {
+        margin-top: 34px;
+        padding-top: 22px;
+        border-top: 1px solid rgba(244, 241, 233, 0.24);
+        color: rgba(244, 241, 233, 0.72);
+        font-size: 12px;
+      }
+
       /* ── Cities: a vertical dotted route ────────────────────────────── */
       .route {
         position: relative;
@@ -947,6 +1113,10 @@
           border-color: var(--accent);
           background: #fffdf7;
         }
+        .recent-feature:hover {
+          border-color: var(--accent);
+          box-shadow: 0 18px 50px rgba(23, 32, 29, 0.08);
+        }
         .visit:hover {
           transform: translateY(-3px);
           border-color: var(--accent);
@@ -967,6 +1137,12 @@
         }
         .skill-label {
           position: static;
+        }
+        .recent-feature {
+          grid-template-columns: 1fr;
+        }
+        .recent-visual {
+          min-height: 520px;
         }
         .skill-groups {
           grid-template-columns: 1fr 1fr;
@@ -1007,6 +1183,26 @@
         }
         .section-no {
           position: static;
+        }
+        .recent-intro {
+          margin: -20px 0 36px;
+        }
+        .recent-feature {
+          min-height: 0;
+        }
+        .recent-copy,
+        .recent-visual {
+          padding: 30px 24px;
+        }
+        .recent-copy h3 {
+          margin-top: 28px;
+        }
+        .recent-actions {
+          margin-top: 36px;
+          padding-top: 0;
+        }
+        .recent-visual {
+          min-height: 470px;
         }
         .route {
           padding-left: 40px;
@@ -1125,7 +1321,7 @@
       <div class="wrap">
         <nav class="navlinks">
           <a href="#about">About</a><a href="#skills">Skills</a
-          ><a href="#path">Path</a
+          ><a href="#recent">Recent</a><a href="#path">Path</a
           ><a href="#cities">Cities</a><a href="#life">Off the clock</a
           ><a href="#contact">Connect</a>
         </nav>
@@ -1317,11 +1513,97 @@
         </div>
       </section>
 
-      <!-- ══ 03 PATH ═══════════════════════════════════════════════════ -->
+      <!-- ══ 03 RECENT WORK ════════════════════════════════════════════ -->
+      <section id="recent">
+        <div class="wrap">
+          <div class="section-head">
+            <div class="section-no reveal">03 — Recent work</div>
+            <h2 class="reveal">What I've been building lately.</h2>
+          </div>
+          <p class="recent-intro reveal">
+            Small teams, short timelines, and tools that move a real scientific
+            workflow forward.
+          </p>
+
+          <article class="recent-feature reveal">
+            <div class="recent-copy">
+              <div class="recent-meta">
+                <span class="recent-award">3rd place · Montréal</span>
+                <span>September 2026 · built in two hours</span>
+              </div>
+              <h3>DNA Maker</h3>
+              <p class="recent-summary">
+                With Cleaver Barnes and Ilya Gorenburg, I built an
+                <strong>AI copilot for plasmid engineering</strong> at the
+                Agents, Everywhere hackathon. A scientist describes the edit;
+                the agent coordinates sequence operations, biology checks, and
+                SnapGene-ready output — turning intent into a traceable design
+                workflow.
+              </p>
+              <ul class="recent-tags" aria-label="DNA Maker technologies">
+                <li>MCP orchestration</li>
+                <li>Biopython</li>
+                <li>SnapGene</li>
+                <li>OpenAI Codex</li>
+              </ul>
+              <div class="recent-actions">
+                <a
+                  class="btn primary"
+                  href="https://github.com/cleaver/DNAmaker"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Explore the code ↗</a
+                >
+                <a
+                  class="btn"
+                  href="https://www.loom.com/share/c4dadb425b7e4d538c00088acdf1a712"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Watch the demo ↗</a
+                >
+                <a
+                  class="btn"
+                  href="https://www.linkedin.com/feed/update/urn:li:activity:7504678414512115713/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >LinkedIn post ↗</a
+                >
+              </div>
+            </div>
+
+            <div class="recent-visual" aria-hidden="true">
+              <div>
+                <span class="recent-visual-label"
+                  >Plasmid design · agent workflow</span
+                >
+                <p class="recent-request">
+                  “Replace the gene, add a promoter, check the construct.”
+                </p>
+                <div class="recent-flow">
+                  <div class="recent-node">
+                    Natural-language request <span>01</span>
+                  </div>
+                  <div class="recent-node">
+                    Sequence operations + checks <span>02</span>
+                  </div>
+                  <div class="recent-node">
+                    Validated SnapGene output <span>03</span>
+                  </div>
+                </div>
+              </div>
+              <div class="recent-output">
+                AI agent → molecular biology engine → lab-ready files
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ══ 04 PATH ═══════════════════════════════════════════════════ -->
       <section id="path">
         <div class="wrap">
           <div class="section-head">
-            <div class="section-no reveal">03 — Path</div>
+            <div class="section-no reveal">04 — Path</div>
             <h2 class="reveal">
               Experience is a sequence of useful questions.
             </h2>
@@ -1426,14 +1708,14 @@
         </div>
       </section>
 
-      <!-- ══ 04 CITIES ═════════════════════════════════════════════════
+      <!-- ══ 05 CITIES ═════════════════════════════════════════════════
            A vertical dotted route. The line draws downward as you scroll,
            nodes light as they pass, and every photo drifts inside its own
            frame at its own speed. ════════════════════════════════════════ -->
       <section id="cities">
         <div class="wrap">
           <div class="section-head">
-            <div class="section-no reveal">04 — Cities</div>
+            <div class="section-no reveal">05 — Cities</div>
             <h2 class="reveal">From Nukus, the long way round.</h2>
           </div>
           <p class="intro reveal">
@@ -1661,11 +1943,11 @@
         </div>
       </section>
 
-      <!-- ══ 05 OFF THE CLOCK ══════════════════════════════════════════ -->
+      <!-- ══ 06 OFF THE CLOCK ══════════════════════════════════════════ -->
       <section id="life">
         <div class="wrap">
           <div class="section-head">
-            <div class="section-no reveal">05 — Off the clock</div>
+            <div class="section-no reveal">06 — Off the clock</div>
             <h2 class="reveal">The rest of me.</h2>
           </div>
 
@@ -1747,7 +2029,7 @@
         </div>
       </section>
 
-      <!-- ══ 06 CONNECT ════════════════════════════════════════════════ -->
+      <!-- ══ 07 CONNECT ════════════════════════════════════════════════ -->
       <section id="contact">
         <div class="wrap contact">
           <h2 class="reveal">Let's connect.</h2>
